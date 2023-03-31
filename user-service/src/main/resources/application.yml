@@ -6,6 +6,10 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
+
+  #eureka服务注册
+  application:
+    name: userservice #本服务名称
 mybatis:
   type-aliases-package: cn.pxy.user.pojo
   configuration:
@@ -15,3 +19,7 @@ logging:
     cn.pxy: debug
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
+eureka:
+  client:
+    service-url:  #eureka 地址信息
+      defaultZone: http://127.0.0.1:10086/eureka
