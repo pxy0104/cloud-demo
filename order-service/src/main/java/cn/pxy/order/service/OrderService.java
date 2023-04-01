@@ -18,7 +18,7 @@ public class OrderService {
         // 1.查询订单
         Order order = orderMapper.findById(orderId);
         //2.利用RestTemplate发送http请求，查询用户
-        String url = "http://localhost:8081/user/" + order.getUserId();
+        String url = "http://userservice/user/" + order.getUserId();
         User user = restTemplate.getForObject(url, User.class);
         order.setUser(user);
         // 4.返回

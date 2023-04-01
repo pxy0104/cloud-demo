@@ -5,10 +5,13 @@ spring:
   application:
     name: orderservice
   datasource:
-    url: jdbc:mysql://localhost:3306/cloud_order?useSSL=false&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/cloud_order?useSSL=false&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    nacos:
+      server-addr: localhost:8848 # nacos 服务地址
 mybatis:
   type-aliases-package: cn.pxy.user.pojo
   configuration:
@@ -19,7 +22,14 @@ logging:
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
 
-eureka:
-  client:
-    service-url: #eureka 地址信息
-      defaultZone: http://127.0.0.1:10086/eureka
+#eureka:
+#  client:
+#    service-url: #eureka 地址信息
+#      defaultZone: http://127.0.0.1:10086/eureka
+userservice:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #负载均衡规则
+ribbon:
+  eager-load:
+    enabled: true
+    clients: userservice #指定服务开启饿汉式模式（饥饿加载）
