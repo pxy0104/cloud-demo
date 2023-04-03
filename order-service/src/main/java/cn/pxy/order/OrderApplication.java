@@ -1,6 +1,5 @@
 package cn.pxy.order;
 
-
 import cn.pxy.feign.clients.UserClient;
 import cn.pxy.feign.config.DefaultFeignConfiguration;
 import org.mybatis.spring.annotation.MapperScan;
