@@ -1,4 +1,4 @@
-package cn.pxy.order.pojo;
+package cn.pxy.feign.pojo;
 
 import lombok.Data;
 

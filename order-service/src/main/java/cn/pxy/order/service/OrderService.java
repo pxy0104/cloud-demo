@@ -1,14 +1,12 @@
 package cn.pxy.order.service;
 
-import cn.pxy.order.clients.UserClient;
+
+import cn.pxy.feign.clients.UserClient;
+import cn.pxy.feign.pojo.User;
 import cn.pxy.order.mapper.OrderMapper;
 import cn.pxy.order.pojo.Order;
-import cn.pxy.order.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-
-import javax.annotation.Resource;
 
 @Service
 public class OrderService {

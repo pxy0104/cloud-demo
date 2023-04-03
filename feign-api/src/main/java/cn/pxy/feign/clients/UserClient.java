@@ -1,7 +1,8 @@
-package cn.pxy.order.clients;
+package cn.pxy.feign.clients;
 
 
-import cn.pxy.order.pojo.User;
+
+import cn.pxy.feign.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
