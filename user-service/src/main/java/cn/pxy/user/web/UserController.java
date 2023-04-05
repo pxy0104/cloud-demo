@@ -43,9 +43,10 @@ public class UserController {
         System.out.println("Truth," +truth);
         if (id == 1) {
             Thread.sleep(60);
-        }else if (id == 2) {
-            throw new RuntimeException("触发熔断");
         }
+//        else if (id == 2) {
+//            throw new RuntimeException("触发熔断");
+//        }
         return userService.queryById(id);
     }
 }
